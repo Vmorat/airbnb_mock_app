@@ -1,0 +1,15 @@
+<%= simple_form_for(flat) do |f| %>
+  <%= f.input :property_name %>
+  <%= f.input :description %>
+  <%= f.input :property_type %>
+  <%= f.input :address %>
+  <%= f.input :city %>
+  <%= f.input :country, as: :string %>
+  <%= f.input :bedrooms %>
+  <%= f.input :bathrooms %>
+  <%= f.input :max_guests %>
+  <%= f.input :price_per_night %>
+  <%= f.input :amenities %>
+  <%# <%= f.input :picture_url %>
+  <%= f.submit class: "btn btn-primary" %>
+<% end %>
