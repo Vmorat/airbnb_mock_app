@@ -7,6 +7,6 @@ class User < ApplicationRecord
   has_many :flats, dependent: :destroy
   has_many :bookings, dependent: :destroy
   # New fields
-  validates :name, presence: true
-  validates :role, presence: true
+  validates :first_name, presence: true
+  validates :last_name, presence: true
 end
