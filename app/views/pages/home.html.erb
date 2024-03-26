@@ -13,7 +13,7 @@
 
   <div class="call-to-action">
     <%= link_to "Log in to reserve!", new_user_registration_path, class: "btn btn-primary" %>
- 
+
 
 <!DOCTYPE html>
 <html lang="en">
@@ -45,16 +45,23 @@
     </form>
   </section>
 
+
+
   <section class="listings">
-    <h2>Featured Listings</h2>
-    <div class="listing">
+  <h2>Featured Listings</h2>
+  <div class="listing-gallery">
+    <div class="listing-card">
       <img src="https://via.placeholder.com/150" alt="Listing 1">
-      <h3>Beautiful Beach House</h3>
-      <p>Entire house · 4 guests · 2 bedrooms · 2 beds · 2 baths</p>
-      <span>$150/night</span>
+      <div class="listing-details">
+        <h3>Beautiful Beach House</h3>
+        <p>Entire house · 4 guests · 2 bedrooms · 2 beds · 2 baths</p>
+        <span>$150/night</span>
+      </div>
     </div>
-    <!-- Additional listing items -->
-  </section>
+    <!-- Repeat for additional listing cards -->
+  </div>
+</section>
+
 
   <footer>
     <p>&copy; 2024 Airbnb-like View. All rights reserved.</p>
