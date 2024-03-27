@@ -13,7 +13,7 @@ class FlatsController < ApplicationController
       render :new, status: :unprocessable_entity
     end
   end
-
+  
   private
 
   def flat_params
@@ -31,5 +31,4 @@ class FlatsController < ApplicationController
                                  :price_per_night,
                                  :amenities)
   end
-
 end
