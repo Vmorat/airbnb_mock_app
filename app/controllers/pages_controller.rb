@@ -1,6 +1,7 @@
 class PagesController < ApplicationController
+  # Create the method to show all flats
   def home
-    @flats = Flat.all # Assuming you have a Flat model with flat data
+    @flats = Flat.all
   end
 
   def show_flat_details

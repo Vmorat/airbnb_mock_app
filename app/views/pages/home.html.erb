@@ -21,24 +21,25 @@
   </section>
 
   <section class="listings">
-  <h2>Featured Listings</h2>
-  <div class="listing-gallery">
-   <% @flats.each do |flat|%>
-    <%= link_to flat_path(flat), class: "listing-card" do %>
-   <div class="listing-card">
-      <img src="https://via.placeholder.com/150" alt="flat.property_name">
-      <div class="listing-details">
-        <h3><%=flat.property_name%></h3>
-        <p><%= flat.property_type%> <%= flat.max_guests%> <%= flat.bedrooms%> <%=flat.bathrooms%> </p>
-        <span><%flat.price_per_night%> </span>
-      </div>
-    </div>
-    <% end %>
-    <% end %>
 
-    <!-- Repeat for additional listing cards -->
-  </div>
-</section>
+    <h2>Featured Listings</h2>
+    <div class="listing-gallery">
+      <% @flats.each do |flat| %>
+        <div class="listing-card">
+        <%= link_to flat_path(flat), class: "listing-card" do %>
+          <%= image_tag("flat1.webp", alt: "Listing Image") %> <!-- Replace "placeholder.jpg" with the actual image path -->
+          <div class="listing-details">
+            <h3><%= flat.property_name %></h3> <!-- Assuming 'name' is an attribute of the Flat model -->
+            <p><%= flat.description %></p> <!-- Assuming 'description' is an attribute of the Flat model -->
+            <!-- Add more details as needed -->
+            <span>$<%= flat.price_per_night %>/night</span> <!-- Assuming 'price' is an attribute of the Flat model -->
+          </div>
+        </div>
+      <% end %>
+      <% end %>
+    </div>
+  </section>
+
 
   <footer>
     <p>&copy; 2024 Airbnb-like View. All rights reserved.</p>

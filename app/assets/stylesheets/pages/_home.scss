@@ -34,6 +34,10 @@ nav ul li a {
   padding: 100px 20px;
 }
 
+.listings {
+  padding: 20px;
+}
+
 .listing-gallery {
   display: flex;
   flex-wrap: wrap;
@@ -46,12 +50,23 @@ nav ul li a {
   background-color: #fff;
   border: 1px solid #ccc;
   border-radius: 5px;
+  box-shadow: 0 2px 4px rgba(0, 0, 0, 0.1);
+  transition: transform 0.3s ease-in-out;
   overflow: hidden;
+  text-decoration: none;
+  color: black;
+}
+
+.listing-card:hover {
+  transform: translateY(-5px);
 }
 
 .listing-card img {
   width: 100%;
   height: auto;
+  object-fit: cover;
+  // border-top-left-radius: 8px;
+  // border-top-right-radius: 8px;
 }
 
 .listing-details {
@@ -69,7 +84,6 @@ nav ul li a {
 .listing-details span {
   font-weight: bold;
 }
-
 
 footer {
   background-color: #333;
