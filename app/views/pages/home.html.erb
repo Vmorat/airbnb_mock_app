@@ -1,20 +1,3 @@
-<%# <div class="container">
-  <h1>Welcome to our website!</h1>
-  <p>Discover the proposition value.</p>
-
-  <div class="features">
-    <h2>Features:</h2>
-    <ul>
-      <li>Great places</li>
-      <li>Easy to book</li>
-      <li>Worth the price!</li>
-    </ul>
-  </div>
-
-  <div class="call-to-action">
-    <%= link_to "Log in to reserve!", new_user_registration_path, class: "btn btn-primary" %>
-
-
 <!DOCTYPE html>
 <html lang="en">
 <head>
@@ -25,7 +8,7 @@
 </head>
 <body>
   <header>
- 
+
   </header>
 
   <section class="hero">
@@ -37,23 +20,25 @@
     </form>
   </section>
 
-
-
   <section class="listings">
   <h2>Featured Listings</h2>
   <div class="listing-gallery">
-    <div class="listing-card">
-      <img src="https://via.placeholder.com/150" alt="Listing 1">
+   <% @flats.each do |flat|%>
+    <%= link_to flat_path(flat), class: "listing-card" do %>
+   <div class="listing-card">
+      <img src="https://via.placeholder.com/150" alt="flat.property_name">
       <div class="listing-details">
-        <h3>Beautiful Beach House</h3>
-        <p>Entire house · 4 guests · 2 bedrooms · 2 beds · 2 baths</p>
-        <span>$150/night</span>
+        <h3><%=flat.property_name%></h3>
+        <p><%= flat.property_type%> <%= flat.max_guests%> <%= flat.bedrooms%> <%=flat.bathrooms%> </p>
+        <span><%flat.price_per_night%> </span>
       </div>
     </div>
+    <% end %>
+    <% end %>
+
     <!-- Repeat for additional listing cards -->
   </div>
 </section>
-
 
   <footer>
     <p>&copy; 2024 Airbnb-like View. All rights reserved.</p>
