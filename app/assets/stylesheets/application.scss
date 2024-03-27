@@ -10,3 +10,9 @@
 // Your CSS partials
 @import "components/index";
 @import "pages/index";
+
+body {
+  font-family: 'Avenir', sans-serif; /* Use Avenir as the default font */
+  margin: 0;
+  padding: 0;
+}
