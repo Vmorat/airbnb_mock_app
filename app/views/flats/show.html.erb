@@ -1,0 +1,37 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Flat Details</title>
+  <link rel="stylesheet" href="styles.css">
+</head>
+<body>
+  <header>
+    <!-- Your header content here -->
+  </header>
+
+  <section class="flat-details">
+    <h2>Flat Details</h2>
+        <%= image_tag("flat1.webp", alt: "Listing Image") %>
+        <h3><%= @flat.property_name%></h3>
+        <p><%= @flat.property_type%> <%= @flat.max_guests%> <%= @flat.bedrooms%> <%= @flat.bathrooms%> </p>
+        <span><% @flat.price_per_night%> </span>
+
+ <%= link_to "Reserve", reserve_flat_path(@flat), class: "btn btn-primary" %>
+  </section>
+
+  <footer>
+    <p>&copy; 2024 Airbnb-like View. All rights reserved.</p>
+  </footer>
+
+  <script>
+    document.addEventListener('DOMContentLoaded', () => {
+      const flatId = window.location.pathname.split('/').pop();
+
+      fetch(`/flats/${flatId}.json`)
+        .then(response => response.json())
+        .then(data => {
+          document.getElementById('flat-name').innerText = data.property_name;
+          document.getElementById('flat-description').innerText = data.description;
+          document.getElementById('

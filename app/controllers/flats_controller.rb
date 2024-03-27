@@ -13,7 +13,11 @@ class FlatsController < ApplicationController
       render :new, status: :unprocessable_entity
     end
   end
-  
+
+  def show
+    @flat = Flat.find(params[:id])
+  end
+
   private
 
   def flat_params

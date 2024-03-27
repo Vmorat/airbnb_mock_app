@@ -4,7 +4,8 @@ Rails.application.routes.draw do
   # Define your application routes per the DSL in https://guides.rubyonrails.org/routing.html
   # Properties routes
   # Defines the root path route ("/")
-  get '/details', to: 'pages#details'
+  # get '/details', to: 'pages#details'
+  # get '/flat_details/:id', to: 'pages#show_flat_details', as: 'flat'
   # root "articles#index"
   resources :flats
   resources :users, only: [:new, :create]
