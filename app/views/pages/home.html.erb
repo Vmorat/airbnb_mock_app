@@ -23,21 +23,25 @@
   <section class="listings">
 
     <h2>Featured Listings</h2>
-    <div class="listing-gallery">
-      <% @flats.each do |flat| %>
-        <div class="listing-card">
-        <%= link_to flat_path(flat), class: "listing-card" do %>
-          <%= image_tag("flat1.webp", alt: "Listing Image") %> <!-- Replace "placeholder.jpg" with the actual image path -->
-          <div class="listing-details">
-            <h3><%= flat.property_name %></h3> <!-- Assuming 'name' is an attribute of the Flat model -->
-            <p><%= flat.description %></p> <!-- Assuming 'description' is an attribute of the Flat model -->
-            <!-- Add more details as needed -->
-            <span>$<%= flat.price_per_night %>/night</span> <!-- Assuming 'price' is an attribute of the Flat model -->
+    
+    <div class="row my-2">
+      <div class="listing-gallery">
+        <% @flats.each do |flat| %>
+          <div class="listing-card">
+          <%= link_to flat_path(flat), class: "listing-card" do %>
+            <%= image_tag("flat1.webp", alt: "Listing Image") %> <!-- Replace "placeholder.jpg" with the actual image path -->
+            <div class="listing-details">
+              <h3><%= flat.property_name %></h3> <!-- Assuming 'name' is an attribute of the Flat model -->
+              <p><%= flat.description %></p> <!-- Assuming 'description' is an attribute of the Flat model -->
+              <!-- Add more details as needed -->
+              <span>$<%= flat.price_per_night %>/night</span> <!-- Assuming 'price' is an attribute of the Flat model -->
+            </div>
           </div>
-        </div>
-      <% end %>
-      <% end %>
+        <% end %>
+        <% end %>
+      </div>
     </div>
+
   </section>
 
 

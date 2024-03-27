@@ -1,21 +1,8 @@
 <h1>Book a Flat</h1>
 
-<%= form_with(model: @booking, url: bookings_path) do |form| %>
-  <%= form.hidden_field :flat_id, value: @flat.id %>
-
-  <%= form.label :check_in_date, 'Check-in Date' %>
-  <%= form.date_field :check_in_date %>
-
-  <%= form.label :check_out_date, 'Check-out Date' %>
-  <%= form.date_field :check_out_date %>
-
-  <%# <%= form.label :total_price, 'Total Price' %>
-  <%# <%= form.number_field :total_price %>
-
-  <%# <%= form.label :booking_date, 'Booking Date' %>
-  <%# <%= form.date_field :booking_date %>
-
-  <!-- Status field removed -->
+<%= simple_form_for [@flat, @booking]  do |form| %>
+  <%= form.input :check_in_date %>
+  <%= form.input :check_out_date %>
 
   <%= form.submit "Book" %>
 <% end %>

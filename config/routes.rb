@@ -9,8 +9,15 @@ Rails.application.routes.draw do
   # get '/details', to: 'pages#details'
   # get '/flat_details/:id', to: 'pages#show_flat_details', as: 'flat'
   # root "articles#index"
-  resources :flats
+  resources :flats do
+    resources :bookings, only: [:new, :create]
+  end
+
   resources :users, only: [:new, :create]
-  resources :bookings, only: [:new, :create]
-  post '/flats/:id/bookings/new', to: 'bookings#new', as: 'reserve_flat'
+# <<<<<<< HEAD
+
+# =======
+#   resources :bookings, only: [:new, :create]
+  #post '/flats/:id/bookings/new', to: 'bookings#new', as: 'reserve_flat'
+# >>>>>>> 2dd6784b26c456b189724fd2e735782b1ce2f9f3
 end

@@ -45,9 +45,9 @@
 
   <section>
     <span style="color: #063970; font-weight: bold; font-size: larger;">Price per Night: $<%= @flat.price_per_night %></span>
-  </section>
+   </section>
 
-  <%= link_to "Reserve", reserve_flat_path(@flat), method: :post, class: "btn btn-primary", style: "background-color: #b6107e; border-color: #b6107e; display: inline-block; padding: 10px 20px; margin-top: 20px; color: #fff; text-decoration: none; font-weight: bold;" %>
+ <%= link_to "Reserve", new_flat_booking_path(@flat), method: :post, class: "btn btn-primary", style: "background-color: #b6107e; border-color: #b6107e; display: inline-block; padding: 10px 20px; margin-top: 20px; color: #fff; text-decoration: none; font-weight: bold;" %>
 </div>
 
   <footer>

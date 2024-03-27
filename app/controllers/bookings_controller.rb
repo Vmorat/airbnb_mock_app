@@ -1,11 +1,14 @@
 class BookingsController < ApplicationController
   def new
-    @flat = Flat.find(1)
+    @flat = Flat.find(params[:flat_id])
     @booking = Booking.new
   end
 
   def create
-    @booking = current_user.bookings.build(booking_params)
+    @flat = Flat.find(params[:flat_id])
+    @booking = Booking.new(booking_params)
+    @booking.flat = @flat
+    @booking.user = current_user
     @booking.status = "pending" # Set default status to pending
     if @booking.save
       # Send request to owner (you need to implement this)
