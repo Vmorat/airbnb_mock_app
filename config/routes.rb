@@ -4,8 +4,6 @@ Rails.application.routes.draw do
   # Define your application routes per the DSL in https://guides.rubyonrails.org/routing.html
   # Properties routes
   # Defines the root path route ("/")
-  get '/login', to: 'pages#login'
-  get '/signup', to: 'pages#signup'
   get '/details', to: 'pages#details'
   # root "articles#index"
   resources :flats
