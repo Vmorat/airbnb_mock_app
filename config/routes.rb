@@ -12,4 +12,5 @@ Rails.application.routes.draw do
   resources :flats
   resources :users, only: [:new, :create]
   resources :bookings, only: [:new, :create]
+  post '/flats/:id/bookings/new', to: 'bookings#new', as: 'reserve_flat'
 end
