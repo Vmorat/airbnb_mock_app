@@ -1,4 +1,6 @@
 Rails.application.routes.draw do
+  # get 'bookings/new'
+  # get 'bookings/create'
   devise_for :users
   root to: "pages#home"
   # Define your application routes per the DSL in https://guides.rubyonrails.org/routing.html
@@ -9,4 +11,5 @@ Rails.application.routes.draw do
   # root "articles#index"
   resources :flats
   resources :users, only: [:new, :create]
+  resources :bookings, only: [:new, :create]
 end

@@ -1,7 +1,7 @@
 <%= simple_form_for(flat) do |f| %>
   <%= f.input :property_name %>
   <%= f.input :description %>
-  <%= f.input :property_type %>
+  <%= f.input :property_type, as: :select, collection: ["House","Apartment"]%>
   <%= f.input :address %>
   <%= f.input :city %>
   <%= f.input :country, as: :string %>

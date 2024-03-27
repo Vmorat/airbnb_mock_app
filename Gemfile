@@ -56,6 +56,9 @@ gem "sassc-rails"
 
 gem "devise"
 
+# Geolocation for latitude and longitude
+gem "geocoder"
+
 group :development, :test do
   gem "dotenv-rails"
   # See https://guides.rubyonrails.org/debugging_rails_applications.html#debugging-with-the-debug-gem
