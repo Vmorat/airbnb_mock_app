@@ -11,15 +11,44 @@
     <!-- Your header content here -->
   </header>
 
+<div style="margin-left: 20px;">
   <section class="flat-details">
-    <h2>Flat Details</h2>
-        <%= image_tag("flat1.webp", alt: "Listing Image") %>
-        <h3><%= @flat.property_name%></h3>
-        <p><%= @flat.property_type%> <%= @flat.max_guests%> <%= @flat.bedrooms%> <%= @flat.bathrooms%> </p>
-        <span><% @flat.price_per_night%> </span>
-
- <%= link_to "Reserve", reserve_flat_path(@flat), method: :post, class: "btn btn-primary" %>
+    <div style="margin-bottom: 20px;">
+      <h2 style="color: #333; margin-bottom: 10px;">Flat Details</h2>
+      <%= image_tag("flat1.webp", alt: "Listing Image", style: "width: 500px; height: auto; margin-bottom: 20px;") %>
+      <h3 style="color: #555; font-weight: bold; margin-bottom: 10px;"><%= @flat.property_name %></h3>
+      <p style="color: #777; margin-bottom: 10px;">
+        <i class="fas fa-home"></i> <%= @flat.property_type %> |
+        <i class="fas fa-bed"></i> <%= @flat.bedrooms %> Bedrooms |
+        <i class="fas fa-bath"></i> <%= @flat.bathrooms %> Bathrooms |
+        <i class="fas fa-users"></i> <%= @flat.max_guests %> Guests
+      </p>
+      <p style="color: #777; margin-bottom: 20px;">
+        <i class="fas fa-wifi"></i> <%= @flat.amenities %>
+      </p>
+      <section class="address-details">
+    <div style="margin-bottom: 20px;">
+      <h4 style="color: #333; margin-bottom: 10px;">Address</h4>
+      <p style="color: #777; margin-bottom: 10px;">
+        <i class="fas fa-map-marker-alt"></i> <%= @flat.address %>,
+        <%= @flat.city %>,
+        <%= @flat.country %>
+      </p>
+    </div>
   </section>
+   <section>
+    <h4 style="color: #333; margin-bottom: 10px;">Description</h4>
+      <p style="color: #777; margin-bottom: 20px;"><%= @flat.description %></p>
+    </div>
+  </section>
+
+
+  <section>
+    <span style="color: #063970; font-weight: bold; font-size: larger;">Price per Night: $<%= @flat.price_per_night %></span>
+  </section>
+
+  <%= link_to "Reserve", reserve_flat_path(@flat), method: :post, class: "btn btn-primary", style: "background-color: #b6107e; border-color: #b6107e; display: inline-block; padding: 10px 20px; margin-top: 20px; color: #fff; text-decoration: none; font-weight: bold;" %>
+</div>
 
   <footer>
     <p>&copy; 2024 Airbnb-like View. All rights reserved.</p>
