@@ -1,0 +1,21 @@
+<div class="booking-requests-container">
+  <h1 class="heading">Booking Requests</h1>
+  <% @booking_requests.each do |booking| %>
+    <div class="booking-request">
+      <div class="section">
+        <p class="requestor">Requestor: <%= booking.user.first_name %> <%= booking.user.last_name %></p>
+        <p class="date">From: <%= booking.check_in_date %> - To: <%= booking.check_out_date %></p>
+        <p class="flat">Flat: <%= booking.flat.property_name %></p>
+        <p class="price">Price per Night: <%= booking.flat.price_per_night %></p>
+        <p class="nights">Total Nights: <%= (booking.check_out_date - booking.check_in_date).to_i %></p>
+        <p class="total-amount">Total Amount: <%= booking.flat.price_per_night * (booking.check_out_date - booking.check_in_date).to_i %></p>
+      </div>
+      <div class="actions">
+       <!-- CHARM: I PURPOSELY LEFT THIS AS A COMMENT AS IM NOT SURE WHAT WE WANT THE APPROVE OR
+    REJECT BUTTON TO DO. BUT I HAVE A CODE BELOW. LET ME KNOW IF THAT IS OKAY WITH YOU GUYS.-->
+       <!-- <%= link_to "<i class='fas fa-check'></i> Approve".html_safe, approve_booking_path(booking), method: :post, class: "btn btn-success" %>
+        <%= link_to "<i class='fas fa-times'></i> Reject".html_safe, reject_booking_path(booking), method: :post, class: "btn btn-danger" %> -->
+      </div>
+    </div>
+  <% end %>
+</div>
