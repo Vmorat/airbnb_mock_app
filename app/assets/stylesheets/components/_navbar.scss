@@ -1,27 +1,26 @@
 .navigation {
   background-color: #fff;  /* Set background color */
-  padding: 1rem 2rem;  /* Add padding */
+  padding: 20px 40px;  /* Add padding */
   display: flex;
   justify-content: space-between;  /* Space items horizontally */
 }
 
-.nav-list {  /* Added style for list */
-  display: flex;
-  list-style: none;  /* Remove default bullet points */
-  margin: 0;  /* Remove default margin */
-  padding: 0;  /* Remove default padding */
-}
-
-.nav-list li {
-  margin-right: 1.5rem;  /* Add space between list items */
-}
-
-.nav-list a {
-  text-decoration: none;
-  color: #333;  /* Set text color */
-  font-weight: bold;  /* Make text bold */
-}
-
 .nav-list a:hover {  /* Style on hover */
   color: #d8d8d8de;  /* Change color on hover */
+}
+
+nav ul {
+  list-style-type: none;
+  margin: 0;
+  padding: 20;
+}
+
+nav ul li {
+  display: inline-block;
+  margin-right: 20px;
+}
+
+nav ul li a {
+  text-decoration: none;
+  color: #333;
 }
