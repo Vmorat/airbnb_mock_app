@@ -14,39 +14,41 @@
   <section class="hero">
     <h1>Find your perfect stay</h1>
     <p>Explore unique homes around the world.</p>
-    <form action="#">
-      <input type="text" placeholder="Search...">
-      <button type="submit">Search</button>
+    <form action="/search" method="get" class="search-bar">
+      <input type="text" name="query" placeholder="Search">
+      <button type="submit"><i class="fas fa-search"></i></button>
     </form>
   </section>
 
   <section class="listings">
 
     <h2>Featured Listings</h2>
-    
-    <div class="row my-2">
+
+   <div class="row my-3">
       <div class="listing-gallery">
         <% @flats.each do |flat| %>
           <div class="listing-card">
-          <%= link_to flat_path(flat), class: "listing-card" do %>
-            <%= image_tag("flat1.webp", alt: "Listing Image") %> <!-- Replace "placeholder.jpg" with the actual image path -->
-            <div class="listing-details">
-              <h3><%= flat.property_name %></h3> <!-- Assuming 'name' is an attribute of the Flat model -->
-              <p><%= flat.description %></p> <!-- Assuming 'description' is an attribute of the Flat model -->
-              <!-- Add more details as needed -->
-              <span>$<%= flat.price_per_night %>/night</span> <!-- Assuming 'price' is an attribute of the Flat model -->
-            </div>
+            <%= link_to flat_path(flat), class: "listing-card" do %>
+              <%= image_tag("flat1.webp", alt: "Listing Image") %> <!-- Replace "placeholder.jpg" with the actual image path -->
+              <div class="listing-details">
+                <h3><%= flat.property_name %></h3> <!-- Assuming 'name' is an attribute of the Flat model -->
+                <p><%= flat.description %></p> <!-- Assuming 'description' is an attribute of the Flat model -->
+                <!-- Add more details as needed -->
+                <span>$<%= flat.price_per_night %>/night</span> <!-- Assuming 'price' is an attribute of the Flat model -->
+              </div>
+            <% end %>
+            <button class="favorite-button">&#x2661;</button> <!-- Heart icon as a favorite button -->
           </div>
-        <% end %>
         <% end %>
       </div>
     </div>
+
 
   </section>
 
 
   <footer>
-    <p>&copy; 2024 Airbnb-like View. All rights reserved.</p>
+    <p>&copy; 2024 Airbnb-LeWagon Project. By Abhranil Das, Charmaine Ramos, Feiyue Du, Valentina Mora, and Victoria Vallejo. All rights reserved.</p>
   </footer>
 </body>
 </html>

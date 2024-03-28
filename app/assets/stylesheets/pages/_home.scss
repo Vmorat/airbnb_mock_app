@@ -4,22 +4,6 @@ header {
   padding: 20px;
 }
 
-nav ul {
-  list-style-type: none;
-  margin: 0;
-  padding: 0;
-}
-
-nav ul li {
-  display: inline;
-  margin-right: 20px;
-}
-
-nav ul li a {
-  text-decoration: none;
-  color: #333;
-}
-
 .hero {
   background-image: url('https://via.placeholder.com/150');
   background-size: cover;
@@ -43,24 +27,41 @@ nav ul li a {
   margin-bottom: 20px;
   background-color: #fff;
   border: 1px solid #ccc;
-  border-radius: 5px;
+  border-radius: 8px;
   box-shadow: 0 2px 4px rgba(0, 0, 0, 0.1);
   transition: transform 0.3s ease-in-out;
   overflow: hidden;
   text-decoration: none;
   color: black;
+  position: relative;
 }
 
 .listing-card:hover {
   transform: translateY(-5px);
 }
 
+.favorite-button {
+  position: absolute;
+  top: 10px; /* Adjust as needed */
+  right: 10px; /* Adjust as needed */
+  background: none;
+  border: none;
+  font-size: 24px;
+  color: #ccc;
+  cursor: pointer;
+  transition: color 0.3s;
+}
+
+.favorite-button:hover {
+  color: #ff4081; /* Change color on hover */
+}
+
 .listing-card img {
   width: 100%;
   height: auto;
   object-fit: cover;
-  // border-top-left-radius: 8px;
-  // border-top-right-radius: 8px;
+  border-top-left-radius: 8px;
+  border-top-right-radius: 8px;
 }
 
 .listing-details {
@@ -84,4 +85,35 @@ footer {
   color: #fff;
   text-align: center;
   padding: 20px;
+}
+
+// Search bar format
+.search-bar {
+  background-color: #fff;
+  border: 1px solid #ccc;
+  border-radius: 5px;
+  padding: 5px 10px;
+  display: inline-block;
+  position: relative; /* Allow button positioning */
+}
+
+.search-bar input[type="text"] {
+  width: calc(100% - 30px); /* Adjust for button width */
+  border: none;
+  padding-right: 30px; /* Add space for button */
+}
+
+.search-bar button {
+  position: absolute;
+  right: 5px;  /* Position button at right */
+  top: 50%;  /* Center button vertically */
+  transform: translateY(-50%); /* Align button center */
+  border: none;
+  background-color: #fff;
+  cursor: pointer;
+}
+
+.search-bar button i {
+  font-size: 18px;
+  color: #999;
 }
