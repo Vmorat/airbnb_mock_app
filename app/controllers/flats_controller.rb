@@ -24,6 +24,7 @@ class FlatsController < ApplicationController
     ]
   end
 
+
   def index
     @flats = Flat.all
     if params[:query].present?
@@ -38,6 +39,7 @@ class FlatsController < ApplicationController
       }
     end
   end
+
 
   private
 
