@@ -1,0 +1,23 @@
+<html>
+<!-- Part One: Check out all his apartments -->
+<h2>Owned Flats</h2>
+<% @owned_flats.each do |flat| %>
+  <p><%= flat.property_name %></p>
+  <!-- Show additional apartment details... -->
+<% end %>
+
+<!-- Part 2: View all booking requests for his apartment -->
+<h2>Booking Requests Received</h2>
+<% @booking_requests_to_owned_flats.each do |request| %>
+  <p>Request for <%= request.flat.property_name %> from <%= request.booker.username %></p>
+  <%= link_to "Show All Booking Requests", booking_requests_path %>
+  <!-- Show booking request additional details... -->
+<% end %>
+
+<!-- Part 3: Check out the apartment he has booked -->
+<h2>Booked Flats</h2>
+<% @booked_flats.each do |booking| %>
+  <p><%= booking.flat.name %></p>
+  <!-- Show additional details of booked apartments... -->
+<% end %>
+</html>
