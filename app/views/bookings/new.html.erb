@@ -1,8 +1,15 @@
-<h1>Book a Flat</h1>
+<div class="container">
+  <h1>Book a Flat</h1>
 
-<%= simple_form_for [@flat, @booking]  do |form| %>
-  <%= form.input :check_in_date %>
-  <%= form.input :check_out_date %>
-
-  <%= form.submit "Book" %>
-<% end %>
+  <%= simple_form_for [@flat, @booking]  do |form| %>
+    <%# <%= form.input :check_in_date %>
+    <%# <%= form.input :check_out_date %>
+<%= form.input :check_in_date,
+    as: :string,
+    input_html: { data: { controller: "datepicker" } } %>
+    <%= form.input :check_out_date,
+     as: :string,
+    input_html: { data: { controller: "datepicker" } } %>
+    <%= form.submit "Book" %>
+  <% end %>
+</div>

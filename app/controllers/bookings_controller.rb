@@ -10,6 +10,11 @@ class BookingsController < ApplicationController
     @booking.flat = @flat
     @booking.user = current_user
     @booking.status = "pending" # Set default status to pending
+
+    date_format = "%Y-%m-%d"
+    @booking.check_in_date = Date.strptime(params[:booking][:check_in_date], date_format)
+    @booking.check_out_date = Date.strptime(params[:booking][:check_out_date], date_format)
+    # raise
     if @booking.save
       # Send request to owner (you need to implement this)
       redirect_to root_path, notice: 'Booking request sent successfully!'
