@@ -40,21 +40,21 @@ header {
   transform: translateY(-5px);
 }
 
-.favorite-button {
-  position: absolute;
-  top: 10px; /* Adjust as needed */
-  right: 10px; /* Adjust as needed */
-  background: none;
-  border: none;
-  font-size: 24px;
-  color: #ccc;
-  cursor: pointer;
-  transition: color 0.3s;
-}
+// .favorite-button {
+//   position: absolute;
+//   top: 10px; /* Adjust as needed */
+//   right: 10px; /* Adjust as needed */
+//   background: none;
+//   border: none;
+//   font-size: 24px;
+//   color: #ccc;
+//   cursor: pointer;
+//   transition: color 0.3s;
+// }
 
-.favorite-button:hover {
-  color: #ff4081; /* Change color on hover */
-}
+// .favorite-button:hover {
+//   color: #ff4081; /* Change color on hover */
+// }
 
 .listing-card img {
   width: 100%;

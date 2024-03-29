@@ -14,7 +14,7 @@ Rails.application.routes.draw do
   # get '/flat_details/:id', to: 'pages#show_flat_details', as: 'flat'
   # root "articles#index"
   resources :flats do
-    #resources :bookings, only: [:new, :create]
+    resources :bookings, only: [:new, :create]
     member do
       get 'bookings/show', to: 'bookings#show', as: 'show_all_bookings'
   end
