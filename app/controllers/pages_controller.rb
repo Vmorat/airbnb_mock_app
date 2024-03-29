@@ -35,5 +35,5 @@ class PagesController < ApplicationController
      @owned_flats = current_user.flats
      @booking_requests_to_owned_flats = current_user.received_bookings
      @booked_flats = current_user.bookings
- end
+  end
 end
