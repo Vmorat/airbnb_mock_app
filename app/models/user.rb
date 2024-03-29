@@ -10,5 +10,10 @@ class User < ApplicationRecord
   # New fields
   validates :first_name, presence: true
   validates :last_name, presence: true
-  # attr_accessor :first_name
+
+  # New method
+  def booking_requests_to_owned_flats
+    owned_flats = self.flats
+    Booking.where(flat_id: owned_flats.pluck(:id))
+  end
 end

@@ -1,4 +1,3 @@
-
 $(document).ready(function() {
   // Function to handle Devise alerts
   function handleDeviseAlerts() {
@@ -10,9 +9,15 @@ $(document).ready(function() {
       // Fade in the alert message
       $(this).fadeIn();
 
+      // Store reference to the alert element
+      var alertElement = $(this);
+
       // Set a timeout to fade out the alert message after 3 seconds
       setTimeout(function() {
-        $(this).fadeOut();
+        alertElement.fadeOut(function() {
+          // Remove the alert element from the DOM after fading out
+          alertElement.remove();
+        });
       }, 3000); // 3000 milliseconds = 3 seconds
     });
   }
