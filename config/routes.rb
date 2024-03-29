@@ -2,6 +2,7 @@ Rails.application.routes.draw do
   # get 'bookings/new'
   # get 'bookings/create'
   devise_for :users
+  #devise_for :users, controllers: { registrations: 'registrations' }
   root to: "pages#home"
   get 'accountinformation', to: 'pages#accountinformation'
   # Define your application routes per the DSL in https://guides.rubyonrails.org/routing.html

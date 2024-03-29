@@ -37,4 +37,5 @@ class PagesController < ApplicationController
      @booked_flats = current_user.bookings
      @flat = current_user.flats.first
  end
+
 end
