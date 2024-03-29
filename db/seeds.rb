@@ -61,7 +61,41 @@ berck = {
   amenities: "Elevator"
 }
 
-[sea_purse, berck].each do |attributes|
+le_marais_loft = {
+  user: User.first,
+  property_name: "Stylish Loft in Le Marais",
+  description: "Charming loft in Le Marais district.",
+  property_type: "Loft",
+  address: "14 Rue de Rivoli",
+  city: "Paris",
+  country: "France",
+  latitude: 48.8575,
+  longitude: 2.3546,
+  bedrooms: 2,
+  bathrooms: 1,
+  max_guests: 4,
+  price_per_night: 199,
+  amenities: "WiFi, Kitchen, Heating"
+}
+
+venice_canal_house = {
+  user: User.first,
+  property_name: "Canal House in Venice",
+  description: "Charming house overlooking canals.",
+  property_type: "House",
+  address: "Calle del Tragheto",
+  city: "Venice",
+  country: "Italy",
+  latitude: 45.4384,
+  longitude: 12.3350,
+  bedrooms: 3,
+  bathrooms: 2,
+  max_guests: 6,
+  price_per_night: 299,
+  amenities: "WiFi, Air Conditioning, Canal View"
+}
+
+[sea_purse, berck, le_marais_loft,venice_canal_house].each do |attributes|
   flat = Flat.create!(attributes)
   puts "Created #{flat.property_name}"
 end
