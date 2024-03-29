@@ -1,3 +1,4 @@
+
 Rails.application.routes.draw do
   # get 'bookings/new'
   # get 'bookings/create'
@@ -25,6 +26,8 @@ end
     collection do
       get 'pending_requests'
     end
+    post 'approve', on: :member # Route for approving a booking
+    post 'reject', on: :member  # Route for rejecting a booking
   end
 
   resources :users, only: [:new, :create]

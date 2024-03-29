@@ -42,7 +42,7 @@ class PagesController < ApplicationController
   end
 
   def accountinformation
-     @owned_flats = current_user.flats
+     @owned_flats = current_user.flats.includes(:bookings)
      @booking_requests_to_owned_flats = current_user.received_bookings
      @booked_flats = current_user.bookings
      @flat = current_user.flats.first
