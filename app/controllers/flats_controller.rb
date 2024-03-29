@@ -39,6 +39,10 @@ class FlatsController < ApplicationController
     end
   end
 
+  def show_all
+    @flat = Flat.find(params[:flat_id])
+    # Add your code to retrieve and display all booking requests for this flat
+  end
 
   private
 

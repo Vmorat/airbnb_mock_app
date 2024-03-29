@@ -27,7 +27,7 @@ class PagesController < ApplicationController
 
   def flats_of_user
     # filter the flats where the current user is the owner of the flat
-    @flats = Flat.find(params[:id]).current_user
+    @flats = current_user.received_bookings
   end
 
   def booking_requests_received
@@ -42,8 +42,10 @@ class PagesController < ApplicationController
   end
 
   def accountinformation
-    @owned_flats = current_user.flats
-    @booking_requests_to_owned_flats = current_user.received_bookings
-    @booked_flats = current_user.bookings
+     @owned_flats = current_user.flats
+     @booking_requests_to_owned_flats = current_user.received_bookings
+     @booked_flats = current_user.bookings
+     @flat = current_user.flats.first
   end
+
 end

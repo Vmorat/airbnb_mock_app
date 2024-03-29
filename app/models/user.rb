@@ -10,5 +10,5 @@ class User < ApplicationRecord
   # New fields
   validates :first_name, presence: true
   validates :last_name, presence: true
-  attr_accessor :first_name
+  # attr_accessor :first_name
 end

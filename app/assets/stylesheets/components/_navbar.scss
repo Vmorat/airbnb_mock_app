@@ -1,26 +1,73 @@
 .navigation {
-  background-color: #fff;  /* Set background color */
-  padding: 20px 40px;  /* Add padding */
+  background-color: #fff;
+  padding: 20px 40px;
   display: flex;
-  justify-content: space-between;  /* Space items horizontally */
+  justify-content: space-between;
+  position: sticky;
+  top: 0;
+  width: 100%;
+  z-index: 1000;
 }
 
-.nav-list a:hover {  /* Style on hover */
-  color: #d8d8d8de;  /* Change color on hover */
+.left-nav {
+  display: flex;
 }
 
-nav ul {
+.right-nav {
+  display: flex;
+}
+
+.nav-list {
   list-style-type: none;
   margin: 0;
-  padding: 20;
+  padding: 0;
+  display: flex;
 }
 
-nav ul li {
-  display: inline-block;
+.nav-list li {
   margin-right: 20px;
 }
 
-nav ul li a {
+.nav-list li:last-child {
+  margin-right: 0;
+}
+
+.nav-list a {
   text-decoration: none;
   color: #333;
+}
+
+.user-info {
+  position: relative; /* Make it relative for absolute positioning */
+  display: flex;
+  align-items: center; /* Center vertically */
+}
+
+.avatar {
+  width: 30px; /* Adjust size as needed */
+  height: 30px;
+  border-radius: 50%; /* Make it circular */
+  margin-right: 10px; /* Add some space between avatar and name */
+}
+
+.dropdown-content {
+  display: none;
+  position: absolute;
+  top: 100%; /* Position it below the user info */
+  right: 0; /* Align it to the right of the user info */
+  background-color: #f9f9f9;
+  min-width: 160px;
+  box-shadow: 0px 8px 16px 0px rgba(0,0,0,0.2);
+  z-index: 1;
+}
+
+.dropdown-content a {
+  color: black;
+  padding: 12px 16px;
+  text-decoration: none;
+  display: block;
+}
+
+.dropdown-content a:hover {
+  background-color: #f1f1f1;
 }

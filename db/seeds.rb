@@ -30,7 +30,7 @@ puts "Creating flats..."
 sea_purse = {
   user: User.first,
   property_name: "Spectacular house on the beach - Sea Purse",
-  description: "Sea Purse possesses possibly the most stunning location of any house on the South Coast - every visitor testifies to that. Sitting directly beneath the White Cliffs of Dover and a balcony's width from the beach, this historically important house was previously leased by Noel Coward in the 1950s, with Ian Fleming leasing the adjacent house. Read James Bond's Moonraker novel and it's clear Fleming drew inspiration from this beautiful location.",
+  description: "Sea Purse possesses possibly the most stunning location of any house on the South Coast",
   property_type: "House",
   address: "5786 Roselyn Throughway",
   city: "Saint Margarets Bay",
@@ -47,12 +47,7 @@ sea_purse = {
 berck = {
   user: User.first,
   property_name: "Entire rental unit in Berck",
-  description: "Come and enjoy this hidden gem facing the Berckoan beach and contemplate the unique sunsets
-  of the Opal Coast.
-  Restaurants, bars, shops, cinema and casino are less than a 5-minute walk away.
-  Great for a romantic stay, this rare find will also be able to accommodate a child if the nanny is not available.
-  The pleasure of welcoming you!
-  A private car garage is available with the apartment",
+  description: "Come and enjoy this hidden gem, private car garage is available with the apartment",
   property_type: "Apartment",
   address: "3393 Ronny Way",
   city: "Berck",

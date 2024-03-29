@@ -1,0 +1,20 @@
+<div class="booking-requests-container" style="margin-left: 20px;">
+  <h1 class="heading">Booking Requests</h1>
+  <% if @booking_requests.present? %>
+    <% @booking_requests.each do |booking| %>
+      <div class="booking-request" style="margin-bottom: 20px;">
+        <div class="section">
+          <p class="requestor">Requestor: <%= booking.user.first_name %> <%= booking.user.last_name %></p>
+          <!-- Add other booking request details here -->
+          <div class="button-group">
+            <%= link_to "<i class='fas fa-eye'></i> View Details".html_safe, booking_path(booking), class: "btn btn-primary mr-2", style: "background-color: #4CAF50; border-color: #4CAF50;" %>
+            <%= button_to "<i class='fas fa-check'></i> Approve".html_safe, approve_booking_path(booking), method: :post, class: "btn btn-success mr-2", style: "background-color: #008CBA; border-color: #008CBA;" %>
+            <%= button_to "<i class='fas fa-times'></i> Reject".html_safe, reject_booking_path(booking), method: :post, class: "btn btn-danger", style: "background-color: #f44336; border-color: #f44336;" %>
+          </div>
+        </div>
+      </div>
+    <% end %>
+  <% else %>
+    <p>No booking requests found.</p>
+  <% end %>
+</div>
