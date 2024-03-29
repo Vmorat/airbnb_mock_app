@@ -8,6 +8,16 @@ class PagesController < ApplicationController
     end
   end
 
+  def explore
+    @flats = Flat.all
+    @markers = @flats.geocoded.map do |flat|
+      {
+        lat: flat.latitude,
+        lng: flat.longitude
+      }
+    end
+  end
+
   def show_flat_details
     @flats = Flat.find(params[:id])
     # You can add additional logic here if needed
@@ -36,6 +46,6 @@ class PagesController < ApplicationController
      @booking_requests_to_owned_flats = current_user.received_bookings
      @booked_flats = current_user.bookings
      @flat = current_user.flats.first
- end
+  end
 
 end

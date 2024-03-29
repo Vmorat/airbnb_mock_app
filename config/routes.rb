@@ -4,7 +4,9 @@ Rails.application.routes.draw do
   devise_for :users
   #devise_for :users, controllers: { registrations: 'registrations' }
   root to: "pages#home"
-  get 'accountinformation', to: 'pages#accountinformation'
+  get '/accountinformation', to: 'pages#accountinformation'
+  get '/explore', to: 'pages#explore'
+
   # Define your application routes per the DSL in https://guides.rubyonrails.org/routing.html
   # Properties routes
   # Defines the root path route ("/")
@@ -17,6 +19,7 @@ Rails.application.routes.draw do
       get 'bookings/show', to: 'bookings#show', as: 'show_all_bookings'
   end
 end
+
 
   resources :bookings, only: [:index] do
     collection do
