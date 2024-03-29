@@ -25,14 +25,23 @@ class BookingsController < ApplicationController
       render :new
     end
   end
+
   def index
     @booking_requests = current_user.booking_requests
   end
+
+  def show_all
+    @owned_flats = current_user.flats
+    @booking_requests = Booking.where(flat_id: @owned_flats.pluck(:id))
+    head :no_content
+  end
+
   private
 
   def booking_params
     params.require(:booking).permit(:flat_id, :check_in_date, :check_out_date, :total_price, :booking_date, :status)
   end
+
   def find_flat
     @flat = Flat.find(params[:flat_id])
   end

@@ -11,9 +11,12 @@ Rails.application.routes.draw do
   # get '/flat_details/:id', to: 'pages#show_flat_details', as: 'flat'
   # root "articles#index"
   resources :flats do
-    resources :bookings, only: [:new, :create]
-    get 'account_information/bookings/show_all', to: 'bookings#show_all', as: 'show_all_bookings'
+    #resources :bookings, only: [:new, :create]
+    member do
+      get 'bookings/show', to: 'bookings#show', as: 'show_all_bookings'
   end
+end
+
   resources :bookings, only: [:index] do
     collection do
       get 'pending_requests'
