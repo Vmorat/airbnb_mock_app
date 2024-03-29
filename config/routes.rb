@@ -3,6 +3,7 @@ Rails.application.routes.draw do
   # get 'bookings/create'
   devise_for :users
   root to: "pages#home"
+  get 'accountinformation', to: 'pages#accountinformation'
   # Define your application routes per the DSL in https://guides.rubyonrails.org/routing.html
   # Properties routes
   # Defines the root path route ("/")
