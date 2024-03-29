@@ -36,6 +36,11 @@ class BookingsController < ApplicationController
     head :no_content
   end
 
+  def show
+    @booking = Booking.find(params[:id])
+    @booking_requests_to_owned_flats = current_user.booking_requests_to_owned_flats
+  end
+
   private
 
   def booking_params
