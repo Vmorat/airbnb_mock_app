@@ -6,7 +6,7 @@ class User < ApplicationRecord
 
   has_many :flats, dependent: :destroy
   has_many :bookings, dependent: :destroy
-  has_many :received_bookings, through: :flats, source: :bookings
+  has_many :received_bookings, through: :flats, source: :bookings, dependent: :destroy
   # New fields
   validates :first_name, presence: true
   validates :last_name, presence: true
