@@ -24,7 +24,6 @@ class FlatsController < ApplicationController
     ]
   end
 
-
   def index
     @flats = Flat.all
     if params[:query].present?

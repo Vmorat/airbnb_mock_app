@@ -3,7 +3,9 @@ Rails.application.routes.draw do
   # get 'bookings/create'
   devise_for :users
   root to: "pages#home"
-  get 'accountinformation', to: 'pages#accountinformation'
+  get '/accountinformation', to: 'pages#accountinformation'
+  get '/explore', to: 'pages#explore'
+
   # Define your application routes per the DSL in https://guides.rubyonrails.org/routing.html
   # Properties routes
   # Defines the root path route ("/")
@@ -14,6 +16,7 @@ Rails.application.routes.draw do
     resources :bookings, only: [:new, :create]
     get 'account_information/bookings/show_all', to: 'bookings#show_all', as: 'show_all_bookings'
   end
+
   resources :bookings, only: [:index] do
     collection do
       get 'pending_requests'
