@@ -1,20 +1,20 @@
-<div class="booking-requests-container" style="margin-left: 20px;">
-  <h1 class="heading">Booking Requests</h1>
-  <% if @booking_requests.present? %>
-    <% @booking_requests.each do |booking| %>
-      <div class="booking-request" style="margin-bottom: 20px;">
-        <div class="section">
-          <p class="requestor">Requestor: <%= booking.user.first_name %> <%= booking.user.last_name %></p>
-          <!-- Add other booking request details here -->
-          <div class="button-group">
-            <%= link_to "<i class='fas fa-eye'></i> View Details".html_safe, booking_path(booking), class: "btn btn-primary mr-2", style: "background-color: #4CAF50; border-color: #4CAF50;" %>
-            <%= button_to "<i class='fas fa-check'></i> Approve".html_safe, approve_booking_path(booking), method: :post, class: "btn btn-success mr-2", style: "background-color: #008CBA; border-color: #008CBA;" %>
-            <%= button_to "<i class='fas fa-times'></i> Reject".html_safe, reject_booking_path(booking), method: :post, class: "btn btn-danger", style: "background-color: #f44336; border-color: #f44336;" %>
-          </div>
-        </div>
+<% @booking_requests_to_owned_flats.each do |request| %>
+  <div class="booking-request" style="margin-bottom: 20px; border: 1px solid #ccc; padding: 15px; border-radius: 5px; position: relative;">
+    <div class="section">
+      <h3>Booking Request</h3>
+      <p><strong>Property:</strong> <%= request.flat.property_name %></p>
+      <p><strong>Requestor:</strong> <%= request.user.first_name %> <%= request.user.last_name %></p>
+      <p><strong>Check-in Date:</strong> <%= request.check_in_date.strftime('%B %d, %Y') %></p>
+      <p><strong>Check-out Date:</strong> <%= request.check_out_date.strftime('%B %d, %Y') %></p>
+      <% number_of_days = (request.check_out_date - request.check_in_date).to_i %>
+      <p><strong>Number of Days:</strong> <%= number_of_days %></p>
+      <p><strong>Price per Night:</strong> <%= number_to_currency(request.flat.price_per_night) %></p>
+      <% total_amount = number_of_days * request.flat.price_per_night %>
+      <p><strong>Total Amount:</strong> <%= number_to_currency(total_amount) %></p>
+      <div class="button-group mt-3" style="position: absolute; top: 10px; right: 10px;">
+        <%= button_to "<i class='fas fa-check'></i>".html_safe, "#", class: "btn btn-success", style: "background-color: #d4edda; border-color: #c3e6cb; pointer-events: none;" %>
+        <%= button_to "<i class='fas fa-times'></i>".html_safe, "#", class: "btn btn-danger", style: "background-color: #f8d7da; border-color: #f5c6cb; pointer-events: none;" %>
       </div>
-    <% end %>
-  <% else %>
-    <p>No booking requests found.</p>
-  <% end %>
-</div>
+    </div>
+  </div>
+<% end %>
