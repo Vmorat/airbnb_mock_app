@@ -8,20 +8,20 @@
   <ul>
     <% @owned_flats.each do |flat| %>
       <li>
-        <%= link_to flat.property_name, flat_path(flat) %>
+        <%= link_to flat.property_name, flat_path(@flat) %>
       </li>
     <% end %>
   </ul>
   <div class="mt-3">
-    <%= button_to "<i class='fas fa-plus'></i> Create New".html_safe, "#", class: "btn btn-success", style: "background-color: #767aa2; border-color: #767aa2; font-size: smaller;" %>
+    <%= link_to "<i class='fas fa-plus'></i> Create New".html_safe, new_flat_path(@flat), class: "btn btn-success", style: "background-color: #767aa2; border-color: #767aa2; font-size: smaller;" %>
   </div>
-  
+
   <h2>Booking Requests</h2>
   <% @booking_requests_to_owned_flats.each do |request| %>
-    <p>Request for <%= request.flat.property_name %> from <%= request.booker.username %></p>
+    <p>Request for <%= request.flat.property_name %> from <%= request.user.username %></p>
    <div class="mt-3">
-    <%= link_to "<i class='fas fa-list'></i> Show All".html_safe, show_all_bookings_flat_path(flat), class: "btn btn-primary mr-2 ml-2", style: "background-color: #d370b2; border-color: #d370b2; font-size: smaller;" %>
-    <%= button_to "<i class='fas fa-plus'></i> Create New".html_safe, "#", class: "btn btn-success", style: "background-color: #767aa2; border-color: #767aa2; font-size: smaller;" %>
+    <%# <%= button_to "<i class='fas fa-plus'></i> Create New".html_safe, "#", class: "btn btn-success", style: "background-color: #767aa2; border-color: #767aa2; font-size: smaller;" %>
+    <%= link_to "<i class='fas fa-list'></i> Show All".html_safe, show_all_bookings_flat_path(@flat), class: "btn btn-primary mr-2 ml-2", style: "background-color: #d370b2; border-color: #d370b2; font-size: smaller;" %>
   </div>
   <% end %>
 
@@ -30,7 +30,7 @@
     <p><%= booking.flat.property_name %></p>
   <% end %>
   <div class="mt-3">
-    <%= button_to "<i class='fas fa-list'></i> Show All".html_safe, "#", class: "btn btn-primary mr-2 ml-2", style: "background-color: #d370b2; border-color: #d370b2; font-size: smaller;" %>
-    <%= button_to "<i class='fas fa-plus'></i> Create New".html_safe, "#", class: "btn btn-success", style: "background-color: #767aa2; border-color: #767aa2; font-size: smaller;" %>
+    <%= link_to "<i class='fas fa-list'></i> Show All".html_safe, "#", class: "btn btn-primary mr-2 ml-2", style: "background-color: #d370b2; border-color: #d370b2; font-size: smaller;" %>
+    <%# <%= button_to "<i class='fas fa-plus'></i> Create New".html_safe, "#", class: "btn btn-success", style: "background-color: #767aa2; border-color: #767aa2; font-size: smaller;" %>
   </div>
 </div>
