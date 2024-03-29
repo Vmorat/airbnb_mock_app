@@ -8,8 +8,6 @@
 <% @owned_flats.each do |flat| %>
   <p><%= flat.property_name %></p>
 <div class="mt-3">
-  <%= link_to "<i class='fas fa-list'></i> Show All".html_safe, show_all_bookings_flat_path(flat), class: "btn btn-primary mr-2 ml-2", style: "background-color: #d370b2; border-color: #d370b2; font-size: smaller;" %>
-  <%#= link_to "Reserve", new_flat_booking_path(@flat), method: :post, class: "btn btn-primary", style: "background-color: #b6107e; border-color: #b6107e; display: inline-block; padding: 10px 20px; margin-top: 20px; color: #fff; text-decoration: none; font-weight: bold;" %>
   <%= button_to "<i class='fas fa-plus'></i> Create New".html_safe, "#", class: "btn btn-success", style: "background-color: #767aa2; border-color: #767aa2; font-size: smaller;" %>
 </div>
 <% end %>
@@ -17,11 +15,11 @@
   <h2>Booking Requests</h2>
   <% @booking_requests_to_owned_flats.each do |request| %>
     <p>Request for <%= request.flat.property_name %> from <%= request.booker.username %></p>
-  <% end %>
-  <div class="mt-3">
-    <%= button_to "<i class='fas fa-list'></i> Show".html_safe, "#", class: "btn btn-primary mr-2 ml-2", style: "background-color: #d370b2; border-color: #d370b2; font-size: smaller;" %>
+   <div class="mt-3">
+    <%= link_to "<i class='fas fa-list'></i> Show All".html_safe, show_all_bookings_flat_path(flat), class: "btn btn-primary mr-2 ml-2", style: "background-color: #d370b2; border-color: #d370b2; font-size: smaller;" %>
     <%= button_to "<i class='fas fa-plus'></i> Create New".html_safe, "#", class: "btn btn-success", style: "background-color: #767aa2; border-color: #767aa2; font-size: smaller;" %>
   </div>
+  <% end %>
 
   <h2>My Reservations</h2>
   <% @booked_flats.each do |booking| %>
